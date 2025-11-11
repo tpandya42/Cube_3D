@@ -163,5 +163,7 @@ Managing smooth movement and rotation using MLX hooks and key states.
 
     ---
 
-    ## 
-👤 Author
+## 👤 Author
+
+- Alicia Betancourt ([mainibet](https://github.com/mainibet))
+- Tanmay Pandya ([Tanmay](https://github.com/tpandya42))
