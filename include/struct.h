@@ -5,7 +5,7 @@
 # define WIN_HEIGHT 800
 # define TILE_SIZE 6 //minimap BONUS
 
-#include "cub.h"
+#include "cub.h" 
 
 // DEFINE STRUCTS
 typedef struct s_map
