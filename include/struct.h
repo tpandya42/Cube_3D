@@ -67,12 +67,15 @@ typedef struct s_display
 	char	*addr;		//color related
 	int		bpp;		//color related
 	int		line_len;	//color related
-	int		endian;	//color related
+	int		endian;		//color related
+	int     win_w;		//window
+	int     win_h;		//windiw
+	int     move_count;
 }	t_display;
 
 typedef struct s_game //check if can be useful
 {
-	t_display	display;
+	t_display	disp;
 	t_map		map;
 	t_player	player;
 	t_texture	textures;

@@ -22,6 +22,7 @@
 
 // Own headers
 # include "struct.h"
+# include "window.h"
 # include "raycast.h"
 # include "util.h"
 
