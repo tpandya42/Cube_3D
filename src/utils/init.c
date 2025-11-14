@@ -28,31 +28,32 @@ void init_colors(t_game *game)//dummy colors
 	game->ceiling.hex = (game->ceiling.r << 16) | (game->ceiling.g << 8) | game->ceiling.b;
 }
 
-void	init_player(t_player *player)//dummy data
+int	init_player(t_game *game)//dummy data
 {
-	player->ini_x = 1.0;
-	player->ini_y = 1.0;
-	player->x = player->ini_x;
-	player->y = player->ini_y;
-	player->dir_x = 1.0;   // looking to the right initially
-	player->dir_y = 0.0;
-	player->plane_x = 0.0; // width of vision plane
-	player->plane_y = 0.66;
-	player->move_speed = 0.05;
-	player->rot_speed = 0.05;
+	game->player->ini_x = 1.0;
+	game->player->ini_y = 1.0;
+	game->player->x = player->ini_x;
+	game->player->y = player->ini_y;
+	game->player->dir_x = 1.0;   // looking to the right initially
+	game->player->dir_y = 0.0;
+	game->player->plane_x = 0.0; // width of vision plane
+	game->player->plane_y = 0.66;
+	game->player->move_speed = 0.05;
+	game->player->rot_speed = 0.05;
 }
-int	init_map(t_map *map)//dummy data
+int	init_map(t_game *game)//dummy data
 {
 	int	i;
 	int	j;
-//falta incluir handling error para enviarlo a t_game
-	map->rows = 10;
-	map->cols = 10;
-	map->grid = malloc(sizeof(char *) * map->rows);
+	game->map->rows = 10;
+	game->map->cols = 10;
+	game->map->grid = malloc(sizeof(char *) * map->rows);
+	if (!game->map->grid)
+		return (1);
 	i = 0;
 	while (i < map->rows)
 	{
-		map->grid[i] = malloc(sizeof(char) * map->cols);
+		game->map->grid[i] = malloc(sizeof(char) * map->cols);
 		j = 0;
 		while (j < map->cols)
 		{
@@ -70,25 +71,12 @@ int	init_map(t_map *map)//dummy data
  */
 int	init_display(t_game *game)
 {
-	game->display.mlx = mlx_init();
-	if (!game->display.mlx)
+	game->disp.mlx = mlx_init();
+	if (!game->disp.mlx)
 	{
-		print_error("Error: Unable to initialize mlx\n");
+		print_error("Error: Unable to initialize mlx");
 		return (1); //check exit status
 	}
-	ini_win(&game->display);
-	//data->map = malloc(sizeof(t_map));
-	//if (!data->map)
-	//{
-	//	malloc_error();
-	//	return ;
-	//}
-	//data->map->data = data;
-	//if (load_map(argv, data->map) == 0)
-	//{
-	//	ft_printf("Not possible to load map\n");
-	//	exit(1);
-	//}
-	data->win_w = data->map->cols * TILE_SIZE;
-	data->win_h = data->map->rows * TILE_SIZE;
+	ini_win(&game->disp);
+	return (0);
 }
