@@ -23,8 +23,6 @@ typedef enum	e_ids
 }	t_ids;
 
 
-
-
 // DEFINING STRUCTS
 typedef struct s_map
 {
@@ -54,14 +52,14 @@ typedef struct s_texture
 
 typedef struct s_player
 {
-	double  ini_x;       //initial position
-    double  ini_y;       //initial position
-    double	x;           //update when move
-	double	y;           //update when move
-	double	dir_x;      //vision
-	double	dir_y;      //vision
-	double	plane_x;    //widht vission -> ray casting
-	double	plane_y;    //widht vission -> ray casting
+	double  ini_x;   
+    double  ini_y;      
+    double	x;          
+	double	y;          
+	double	dir_x;      
+	double	dir_y;      
+	double	plane_x;    
+	double	plane_y;    
 	double	rot_speed;
 	double	move_speed;
 }	t_player;
@@ -71,14 +69,13 @@ typedef struct s_display
 	void	*mlx;
 	void	*win;
 	void	*img;
-	char	*addr;      //color related
-	int		bpp;       //color related
-	int		line_len;   //color related
-	int		endian;     //color related
+	char	*addr;
+	int		bpp; 
+	int		line_len;
+	int		endian;
 }	t_display;
 
-typedef struct s_game //check if can be useful
-{
+typedef struct s_game {
 	t_display	display;
 	t_map		map;
 	t_player	player;

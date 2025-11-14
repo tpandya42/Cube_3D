@@ -12,8 +12,7 @@
 
 #include "cub.h"
 
-
-int	close_winx(t_display *disp)
+int	close_win(t_display *disp)
 {
 	clean_exit(disp, 0);
 	return (0);
@@ -34,7 +33,7 @@ void	*create_win(t_display *disp)
 }
 
 
-void	ini_win(t_display *disp)
+void	init_win(t_display *disp)
 {
 	disp->win_h = WIN_HEIGHT;
 	disp->win_w = WIN_WIDTH;

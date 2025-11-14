@@ -1,6 +1,10 @@
+#ifndef WINDOW_H
+#define WINDOW_H
 
-# include "cub.h"
+#include "cub.h"
 
-int	close_winx(t_display *disp);
+int	close_win(t_display *disp);
 void	*create_win(t_display *disp);
-void	ini_win(t_display *disp);
+void	init_win(t_display *disp);
+
+#endif
