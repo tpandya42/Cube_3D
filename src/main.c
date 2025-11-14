@@ -17,16 +17,16 @@
 */
 int	init_game(t_game *game)
 {
-	if (init_display(&game->display))
+	if (init_display(game))
 		return (1);
-	if (init_map(&game->map))
+	if (init_map(game))
 		return (1);
-	if (init_player(&game->player))
+	if (init_player(game))
 		return (1);
-	//if (init_text(&game->textures))
+	//if (init_text(game))
 	//	return (1);
-	init_text(&game->textures);//only initizaling
-	if (init_colors(&game->colors))
+	init_text(game);//only initizaling for now
+	if (init_colors(game))
 		return (1);
 	return (0);
 }
@@ -42,13 +42,13 @@ int	main(void)//tmp for initial phase
 		print_error("Error: Game init failed");
 		return (1);
 	}
-	if (!create_win(&game.display))
+	if (!create_win(&game.disp))
 		return (1);
 	//render_scene(&data);
-	//mlx_hook(data.win, 17, 0, close_winx, &data);//events
+	mlx_hook(game.disp.win, 17, 0, close_winx, &game);//events to close
 	//mlx_key_hook(data.win, key_handle, &data);//events
 	DEBUG_LOG("Player position: (%.2f, %.2f)", game.player.x, game.player.y);
 	DEBUG_LOG("Window size: %dx%d", WIN_WIDTH, WIN_HEIGHT);
-	mlx_loop(game.display.mlx);
+	mlx_loop(game.disp.mlx);
 	return (0);
 }
