@@ -13,30 +13,30 @@
 #include "cub.h"
 
 
-int	close_winx(t_display *data)
+int	close_winx(t_display *disp)
 {
-	clean_exit(data, 0);
+	clean_exit(disp, 0);
 	return (0);
 }
 
-void	*create_win(t_display *data)
+void	*create_win(t_display *disp)
 {
 	char	*msg;
 
 	msg = "MiniMap Debug";
-	data->win = mlx_new_window(data->mlx, data->win_w, data->win_h, msg);
-	if (!data->win)
+	disp->win = mlx_new_window(disp->mlx, disp->win_w, disp->win_h, msg);
+	if (!disp->win)
 	{
 		print_error("Error: creating a window");
 		return (NULL);
 	}
-	return (data->win);
+	return (disp->win);
 }
 
 
-void	ini_win(t_display *data)
+void	ini_win(t_display *disp)
 {
-	data->win_h = WIN_HEIGHT;
-	data->win_w = WIN_WIDTH;
-	data->move_count = 0;
+	disp->win_h = WIN_HEIGHT;
+	disp->win_w = WIN_WIDTH;
+	disp->move_count = 0;
 }
