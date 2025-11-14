@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   struct.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/14 07:51:06 by albetanc          #+#    #+#             */
+/*   Updated: 2025/11/14 08:05:09 by albetanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STRUCT_H
 # define STRUCT_H
 
@@ -5,7 +17,7 @@
 # define WIN_HEIGHT 800
 # define TILE_SIZE 6 //minimap BONUS
 
-#include "cub.h" 
+# include "cub.h" 
 
 // DEFINE STRUCTS
 typedef struct s_map
@@ -35,14 +47,14 @@ typedef struct s_texture
 
 typedef struct s_player
 {
-	double  ini_x;       //initial position
-    double  ini_y;       //initial position
-    double	x;           //update when move
-	double	y;           //update when move
-	double	dir_x;      //vision
-	double	dir_y;      //vision
-	double	plane_x;    //widht vission -> ray casting
-	double	plane_y;    //widht vission -> ray casting
+	double  ini_x;		//initial position
+	double  ini_y;		//initial position
+	double	x;			//update when move
+	double	y;			//update when move
+	double	dir_x;		//vision
+	double	dir_y;		//vision
+	double	plane_x;	//widht vission -> ray casting
+	double	plane_y;	//widht vission -> ray casting
 	double	rot_speed;
 	double	move_speed;
 }	t_player;
@@ -52,10 +64,10 @@ typedef struct s_display
 	void	*mlx;
 	void	*win;
 	void	*img;
-	char	*addr;      //color related
-	int		bpp;       //color related
-	int		line_len;   //color related
-	int		endian;     //color related
+	char	*addr;		//color related
+	int		bpp;		//color related
+	int		line_len;	//color related
+	int		endian;	//color related
 }	t_display;
 
 typedef struct s_game //check if can be useful
