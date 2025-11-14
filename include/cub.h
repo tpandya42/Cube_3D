@@ -14,5 +14,6 @@
 
 // Include Sub Headers
 #include "struct.h"
+#include "init.h"
 
 #endif
