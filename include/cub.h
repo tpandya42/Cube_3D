@@ -17,7 +17,7 @@
 # include "init.h"
 # include "window.h"
 # include "raycast.h"
-# include "util.h"
+# include "utils.h"
 
 //Bonus headers
 # include "minimap_bonus.h"

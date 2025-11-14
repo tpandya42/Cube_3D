@@ -6,15 +6,15 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:08:42 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/13 16:21:30 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:23:17 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-int	close_win(t_display *disp)
+int	close_win(t_game *game)
 {
-	clean_exit(disp, 0);
+	clean_exit(game, 0);
 	return (0);
 }
 
@@ -37,5 +37,4 @@ void	init_win(t_display *disp)
 {
 	disp->win_h = WIN_HEIGHT;
 	disp->win_w = WIN_WIDTH;
-	disp->move_count = 0;
 }

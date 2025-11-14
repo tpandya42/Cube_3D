@@ -73,6 +73,8 @@ typedef struct s_display
 	int		bpp; 
 	int		line_len;
 	int		endian;
+	int		win_w;
+	int		win_h;
 }	t_display;
 
 typedef struct s_game {

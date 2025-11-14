@@ -1,24 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/14 18:01:44 by albetanc          #+#    #+#             */
+/*   Updated: 2025/11/14 18:44:09 by albetanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub.h"
 
-void	init_display(t_display *display)
+
+int	ini_library(t_display *display)
 {
-	display->mlx = NULL;
+	display->mlx = mlx_init();
+	if (!display->mlx)
+	{
+		print_error("Error: Unable to initialize mlx");
+		return (1);
+	}
+	return (0);
+}
+
+int	init_display(t_display *display)
+{
+	if (ini_library(display))
+		return (1);
+	init_win(display);
 	display->win = NULL;
 	display->img = NULL;
 	display->addr = NULL;
 	display->bpp = 0;
 	display->line_len = 0;
 	display->endian = 0;
+	return (0);
 }
 
 void	init_map(t_map *map)
 {
 	map->map = NULL;
-	map->width = 0;
-	map->height = 0;
+	map->rows = 0;
+	map->cols = 0;
 	map->player_x = 0;
 	map->player_y = 0;
-	map->player_dir = NULL;
+	map->player_dir = '\0';
 }
 
 void	init_player(t_player *player)
@@ -47,8 +74,15 @@ void	init_texture(t_texture *texture)
 
 void	init_color(t_color *color)
 {
-	color->floor = {0};
-	color->ceiling = {0};
+	int	i;
+
+	i = 0;
+	while (i < 3)
+	{
+		color->floor[i] = 0;
+		color->ceiling[i] = 0;
+		i++;
+	}
 }
 
 void	init_init(t_game *game)
@@ -56,7 +90,7 @@ void	init_init(t_game *game)
 	init_display(&game->display);
 	init_map(&game->map);
 	init_player(&game->player);
-	init_texture(&game->texture);
+	init_texture(&game->textures);
 	init_color(&game->floor);
 	init_color(&game->ceiling);
 	game->flags = 0;
