@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:39:29 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/14 18:39:38 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/17 08:46:35 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 void	fill_colors(t_game *game)
 {
-	// floor gris
+	// floor gray
 	game->floor.floor[0] = 128;
 	game->floor.floor[1] = 128;
 	game->floor.floor[2] = 128;
 
-	// ceiling azul claro
+	// ceiling light blue
 	game->ceiling.ceiling[0] = 135;
 	game->ceiling.ceiling[1] = 206;
 	game->ceiling.ceiling[2] = 250;
@@ -42,7 +42,7 @@ void	dummy_map(t_game *game)
 	};
 	game->map.rows = 10;
 	game->map.cols = 10;
-	game->map.map = dummy_map;  // ahora se llama 'map'
+	game->map.map = dummy_map;
 }
 
 void	dummy_player(t_game *game)
