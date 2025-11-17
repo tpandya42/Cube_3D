@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colors.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/17 08:51:06 by albetanc          #+#    #+#             */
+/*   Updated: 2025/11/17 09:03:05 by albetanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef COLORS_H
 # define COLORS_H
 
@@ -21,5 +33,12 @@
 # define BLUE "\033[34m"
 # define MAGENTA "\033[35m"
 # define CYAN "\033[36m"
+
+// Minimap defaults
+# define COLOR_WALL      0x333333
+# define COLOR_EMPTY     0xAAAAAA
+# define COLOR_PLAYER    0xFF8800
+# define COLOR_RAY       0xFFFF00
+# define COLOR_FLOOR     0x202020
 
 #endif // COLORS_H
