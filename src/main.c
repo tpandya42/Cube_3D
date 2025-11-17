@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	verify(argc, argv);
-	//init_struct(&game);
+	init_struct(&game);
 	//check_map(argv[1], &game);
 	//start_game(&game);
 	//exit_game(&game);

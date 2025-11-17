@@ -17,62 +17,15 @@ void	clean_map(t_map *map)
 	int	i;
 
 	i = 0;
-	if (!map || !map->map)
+	if (!map || !map->grid)
 		return;
 	while (i < map->rows)
 	{
-		free(map->map[i]);
+		free(map->grid[i]);
 		i++;
 	}
-	free(map->map);
-	map->map = NULL;
+	free(map->grid);
+	map->grid = NULL;
 }
 
-void	clean_textures(t_display *disp, t_texture *text)
-{
-	if (!disp || !disp->mlx || !text)
-		return;
 
-	if (text->north)
-		mlx_destroy_image(disp->mlx, text->north);
-	if (text->south)
-		mlx_destroy_image(disp->mlx, text->south);
-	if (text->east)
-		mlx_destroy_image(disp->mlx, text->east);
-	if (text->west)
-		mlx_destroy_image(disp->mlx, text->west);
-
-	text->north = NULL;
-	text->south = NULL;
-	text->east  = NULL;
-	text->west  = NULL;
-}
-
-void	clean_window(t_display *disp)
-{
-	if (disp->win)
-	{
-		mlx_destroy_window(disp->mlx, disp->win);
-		disp->win = NULL;
-	}
-}
-
-void	clean_mlx(t_display *disp)
-{
-	if (disp->mlx)
-	{
-		mlx_destroy_display(disp->mlx);
-		free(disp->mlx);
-		disp->mlx = NULL;
-	}
-}
-
-void	clean_exit(t_game *game, int status)
-{
-	clean_map(&game->map);
-	clean_textures(&game->display, &game->textures);
-	clean_window(&game->display);
-	clean_mlx(&game->display);
-
-	exit(status);
-}
