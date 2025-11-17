@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/17 08:45:42 by albetanc          #+#    #+#             */
+/*   Updated: 2025/11/17 08:45:57 by albetanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef INIT_H	
-#define INIT_H
+# define INIT_H
 
-#include "cub.h"
+# include "cub.h"
 
-int	init_display(t_display *display);
+int		init_display(t_display *display);
 void	init_player(t_player *player);
 void	init_map(t_map *map);
 void	init_color(t_color *color);
