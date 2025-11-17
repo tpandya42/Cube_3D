@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:47:37 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/17 17:54:06 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:37:04 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,28 @@ void	draw_player_minimap(t_game *game)
 {
 	int	px;
 	int	py;
+	int	size;
+	int	dx;
+	int	dy;
+
+	size = game->minimap.tile_size / 2;
 
 	px = game->minimap.offset_x + 
 		(int)(game->player.x * game->minimap.tile_size);
 	py = game->minimap.offset_y
 		+ (int)(game->player.y * game->minimap.tile_size);
-	mlx_pixel_put(game->display.mlx, game->display.win,
-		px, py, COLOR_PLAYER);
+	dy = 0;
+	while (dy < size)
+	{
+		dx = 0;
+		while (dx < size)
+		{
+			mlx_pixel_put(game->display.mlx, game->display.win,
+				px + dx, py + dy, COLOR_PLAYER);
+			dx++;
+		}
+		dy++;
+	}
 }
 
 static void	draw_square(t_game *game, int x, int y, int size, int color)
