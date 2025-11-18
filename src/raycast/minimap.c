@@ -6,11 +6,29 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:47:37 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/18 08:34:19 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/18 17:37:15 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
+
+void my_mlx_pixel_put(t_display *display, int x, int y, int color)
+{
+    char    *dst;
+    int     bpp_bytes; // bytes por pixel
+
+    // Comprobación de límites: crucial para evitar errores de segmentación
+    if (x < 0 || x >= display->win_w || y < 0 || y >= display->win_h)
+        return ;
+
+    bpp_bytes = display->bpp / 8;
+    
+    // Calcula la dirección de memoria: y * longitud_de_línea + x * bytes_por_píxel
+    dst = display->addr + (y * display->line_len + x * bpp_bytes);
+    
+    // Escribe el color (como un entero de 4 bytes)
+    *(unsigned int*)dst = color;
+}
 
 void	draw_player_minimap(t_game *game)
 {
@@ -32,8 +50,9 @@ void	draw_player_minimap(t_game *game)
 		dx = 0;
 		while (dx < size)
 		{
-			mlx_pixel_put(game->display.mlx, game->display.win,
-				px + dx, py + dy, COLOR_PLAYER);
+			//mlx_pixel_put(game->display.mlx, game->display.win,
+			//	px + dx, py + dy, COLOR_PLAYER);
+			my_mlx_pixel_put(&game->display, px + dx, py + dy, COLOR_PLAYER);
 			dx++;
 		}
 		dy++;
@@ -51,8 +70,9 @@ static void	draw_square(t_game *game, int x, int y, int size, int color)
 		dx = 0;
 		while (dx < size)
 		{
-			mlx_pixel_put(game->display.mlx, game->display.win,
-				x + dx, y + dy, color);
+			//mlx_pixel_put(game->display.mlx, game->display.win,
+			//	x + dx, y + dy, color);
+			my_mlx_pixel_put(&game->display, x + dx, y + dy, color);
 			dx++;
 		}
 		dy++;
