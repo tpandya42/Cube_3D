@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:29:42 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/17 17:28:52 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/18 08:46:51 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int	main(void)
 	if (!create_win(&game.display))
 		return (1);
 	render_scene(&game);
-	mlx_hook(game.display.win, 17, 0, close_win, &game);//events to close
-	//mlx_key_hook(data.win, key_handle, &data);//events
+	mlx_hook(game.display.win, 17, 0, close_win, &game);//closing window
+	//mlx_key_hook(game.display.win, key_handle, &game);//events mlx hook when pressing a key not if keey press
+	mlx_hook(game.display.win, 2, 1L<<0, key_press, &game);//to keep it press
+	//mlx_hook(win, 3, 1L<<1, key_release, game);//smooth
 	DEBUG_LOG("Player position: (%.2f, %.2f)", game.player.x, game.player.y);
 	DEBUG_LOG("Window size: %dx%d", WIN_WIDTH, WIN_HEIGHT);
 	mlx_loop(game.display.mlx);

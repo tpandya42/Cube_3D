@@ -6,11 +6,10 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:47:37 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/17 18:37:04 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/18 08:34:19 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define MINIMAP_MARGIN 20 //from the window border
 #include "cub.h"
 
 void	draw_player_minimap(t_game *game)

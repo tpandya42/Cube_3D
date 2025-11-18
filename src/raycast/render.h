@@ -6,10 +6,11 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 16:21:09 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/17 17:28:49 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/18 08:46:11 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "cub.h"
+#include "cub.h"
 
 int	render_scene(t_game *game);
+int	key_press(int keycode, void *param);
