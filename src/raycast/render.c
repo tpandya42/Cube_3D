@@ -6,51 +6,48 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:38:05 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/18 18:05:26 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/19 08:29:33 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-#include "move.h" //move to cub.h
-#include "rotation.h" //move this to cub.h
-#define CAMERA_PLANE_X 0.66
 
 void	setup_initial_vectors(t_player *player, char initial_dir)
 {
 	if (initial_dir == 'N')
-    {
-        player->dir_x = 0;
-        player->dir_y = -1.0; // up
-        player->plane_x = CAMERA_PLANE_X;
-        player->plane_y = 0;
-    }
-    else if (initial_dir == 'S')
-    {
-        player->dir_x = 0;
-        player->dir_y = 1.0; // down
-        player->plane_x = -CAMERA_PLANE_X;
-        player->plane_y = 0;
-    }
-    else if (initial_dir == 'E')
-    {
-        player->dir_x = 1.0; // right
-        player->dir_y = 0;
-        player->plane_x = 0;
-        player->plane_y = CAMERA_PLANE_X;
-    }
-    else if (initial_dir == 'W')
-    {
-        player->dir_x = -1.0; // left
-        player->dir_y = 0;
-        player->plane_x = 0;
-        player->plane_y = -CAMERA_PLANE_X;
-    }
+	{
+		player->dir_x = 0;
+		player->dir_y = -1.0; // up
+		player->plane_x = CAMERA_PLANE_X;
+		player->plane_y = 0;
+	}
+	else if (initial_dir == 'S')
+	{
+		player->dir_x = 0;
+		player->dir_y = 1.0; // down
+		player->plane_x = -CAMERA_PLANE_X;
+		player->plane_y = 0;
+	}
+	else if (initial_dir == 'E')
+	{
+		player->dir_x = 1.0; // right
+		player->dir_y = 0;
+		player->plane_x = 0;
+		player->plane_y = CAMERA_PLANE_X;
+	}
+	else if (initial_dir == 'W')
+	{
+		player->dir_x = -1.0; // left
+		player->dir_y = 0;
+		player->plane_x = 0;
+		player->plane_y = -CAMERA_PLANE_X;
+	}
 	else//if it's not valid initial direction -> print a message? check parsing This is a default behav
 	{
 		player->dir_x = 0;
-        player->dir_y = -1.0; // Default: Norte
-        player->plane_x = CAMERA_PLANE_X;
-        player->plane_y = 0;
+		player->dir_y = -1.0; // Default: Norte
+		player->plane_x = CAMERA_PLANE_X;
+		player->plane_y = 0;
 	}
 }
 

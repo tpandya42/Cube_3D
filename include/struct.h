@@ -6,18 +6,17 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:51:42 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/18 18:08:36 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/19 08:28:29 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# define WIN_WIDTH 1200
+# define WIN_WIDTH 1200 //check if all this macros we can move it to defines.h
 # define WIN_HEIGHT 800
 # define TILE_SIZE 64 //3d
 # define ALL_IDS (ID_NO|ID_SO|ID_WE|ID_EA|ID_F|ID_C)
-
 
 # include "cub.h"
 

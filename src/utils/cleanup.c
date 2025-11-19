@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 15:09:53 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/19 07:36:40 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/19 08:41:16 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ void	clean_mlx(t_display *disp)
 
 void	clean_exit(t_game *game, int status)
 {
-	clean_map(&game->map);
 	if (game->display.img)
 		mlx_destroy_image(game->display.mlx, game->display.img);//before window
 	clean_textures(&game->display, &game->textures);
 	clean_window(&game->display);
 	clean_mlx(&game->display);
+	clean_map(&game->map);
 	exit(status);
 }
