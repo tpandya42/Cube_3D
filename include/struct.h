@@ -6,18 +6,17 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:51:42 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/17 17:36:06 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/19 08:28:29 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# define WIN_WIDTH 1200
+# define WIN_WIDTH 1200 //check if all this macros we can move it to defines.h
 # define WIN_HEIGHT 800
 # define TILE_SIZE 64 //3d
 # define ALL_IDS (ID_NO|ID_SO|ID_WE|ID_EA|ID_F|ID_C)
-
 
 # include "cub.h"
 
@@ -62,6 +61,16 @@ typedef struct s_texture
 	int		height;
 }	t_texture;
 
+typedef struct s_input_key
+{
+	int	forward;
+	int	back;
+	int	left;
+	int	right;
+	int	rot_left;
+	int	rot_right;
+}	t_input_key;
+
 typedef struct s_player
 {
 	double	ini_x;
@@ -83,7 +92,7 @@ typedef struct s_minimap
 	int height;			// height in pixels
 	int offset_x;		// horizontal offset from the window
 	int offset_y;		// vertical offset from the window
-} t_minimap;
+}	t_minimap;
 
 typedef struct s_display
 {
@@ -107,6 +116,7 @@ typedef struct s_game
 	t_color		floor;
 	t_color		ceiling;
 	t_minimap	minimap;
+	t_input_key	key;
 	int			flags;
 }	t_game;
 

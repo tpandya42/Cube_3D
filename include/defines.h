@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minimap.h                                          :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 08:48:33 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/19 07:57:04 by albetanc         ###   ########.fr       */
+/*   Created: 2025/11/19 08:28:02 by albetanc          #+#    #+#             */
+/*   Updated: 2025/11/19 08:30:16 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-#define MINIMAP_TILE 16
-#define MINIMAP_OFFSET_X 0
-#define MINIMAP_OFFSET_Y 650
-#define MINIMAP_TILE 16
-#define MINIMAP_MARGIN 20 //from the window border
-#define PLAYER_RADIUS 0.15//avoid colisions in cornres ->3d
+//General
 
-void	draw_minimap(t_game *game);
-void	draw_player_minimap(t_game *game);
+
+//Raycasting
+#define CAMERA_PLANE_X 0.66
+
