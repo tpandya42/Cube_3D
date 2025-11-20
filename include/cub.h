@@ -9,8 +9,8 @@
 #include <stdbool.h>
 #include "../libft/libft.h"//do we need this? -> Tanmay? YES for utils
 
-#include <X11/X.h>//do we need this? -> Tanmay?	 YES for keycodes
-#include <X11/keysym.h>//do we need this? -> Tanmay?  YES for keycodes
+//#include <X11/X.h>//do we need this? -> Tanmay?	 YES for keycodes
+//#include <X11/keysym.h>//do we need this? -> Tanmay?  YES for keycodes
 
 // Own headers
 # include "struct.h"
