@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:51:06 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/18 17:30:08 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/20 08:49:49 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define COLOR_WALL      0x333333
 # define COLOR_EMPTY     0xAAAAAA
 # define COLOR_PLAYER    0xFF8800
-# define COLOR_RAY       0xFFFF00
+# define COLOR_RAY       0xFF0000
 # define COLOR_FLOOR     0x202020
 
 #endif // COLORS_H
