@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:51:42 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/24 19:22:58 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/25 08:45:00 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,11 @@ typedef struct s_line
 
 typedef struct s_minimap
 {
-	int tile_size;		// size of each cell
-	int width;			// width in pixels
-	int height;			// height in pixels
-	int offset_x;		// horizontal offset from the window
-	int offset_y;		// vertical offset from the window
+	int	tile_size;		// size of each cell
+	int	width;			// width in pixels
+	int	height;			// height in pixels
+	int	offset_x;		// horizontal offset from the window
+	int	offset_y;		// vertical offset from the window
 }	t_minimap;
 
 typedef struct s_display
