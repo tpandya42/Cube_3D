@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 08:51:42 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/25 08:45:00 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/28 07:41:32 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct s_texture
 	char	*east;
 	int		width;
 	int		height;
-}	t_texture;
+}	t_text;
 
 typedef struct s_input_key
 {
@@ -141,7 +141,7 @@ typedef struct s_game
 	t_display	display;
 	t_map		map;
 	t_player	player;
-	t_texture	textures;
+	t_texture	text;
 	t_color		floor;
 	t_color		ceiling;
 	t_minimap	minimap;

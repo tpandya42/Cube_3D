@@ -6,12 +6,25 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 18:39:29 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/17 08:46:35 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/28 07:43:26 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 #include "dummy.h"
+
+void	load_dummy_text(t_game *game)
+{
+	game->text.north = "textures/dark_north.xpm";
+	game->text.south = "textures/dark_south.xpm";
+	game->text.west = "textures/dark_west.xpm";
+	game->text.east = "textures/dark_east.xpm";
+
+	load_text(game, &game->text.north, game->text.north);
+	load_text(game, &game->text.tex_so, game->text.south);
+	load_text(game, &game->text.tex_we, game->text.west);
+	load_text(game, &game->text.tex_ea, game->text.east);
+}
 
 void	fill_colors(t_game *game)
 {
