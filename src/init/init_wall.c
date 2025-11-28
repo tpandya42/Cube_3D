@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.h                                             :+:      :+:    :+:   */
+/*   init_wall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 08:45:42 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/28 14:54:52 by albetanc         ###   ########.fr       */
+/*   Created: 2025/11/28 14:54:09 by albetanc          #+#    #+#             */
+/*   Updated: 2025/11/28 14:55:10 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INIT_H	
-# define INIT_H
+#include "cub.h"
 
-# include "cub.h"
+void	init_wall_data(t_wall_data *wdata)
+{
+	wdata->img_ptr = NULL;
+	wdata->addr = NULL;
+	wdata->bpp = 0;
+	wdata->line_len = 0;
+	wdata->endian = 0;
+	wdata->width = 0;
+	wdata->height = 0;
+}
 
-void	init_wall_data(t_wall_data *wdata);
-void	init_render_tex(t_render_tex *rtex);
-void	init_key(t_input_key *key);
-void	init_minimap(t_game *game);
-int		init_display(t_display *display);
-void	init_player(t_player *player);
-void	init_map(t_map *map);
-void	init_color(t_color *color);
-void	init_init(t_game *game);
-
-
-
-
-#endif
+void	init_render_tex(t_render_tex *rtex)
+{
+	init_wall_data(&rtex->north);
+	init_wall_data(&rtex->south);
+	init_wall_data(&rtex->west);
+	init_wall_data(&rtex->east);
+}

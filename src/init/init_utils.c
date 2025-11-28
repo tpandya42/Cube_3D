@@ -6,7 +6,7 @@
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:30:17 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/19 08:50:50 by albetanc         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:51:55 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	init_display(t_display *display)
 	if (ini_library(display))
 		return (1);
 	init_win(display);
-	//display->win = NULL;
 	display->img = mlx_new_image(display->mlx, display->win_w, display->win_h);
 	if (!display->img)
 		return (1);
@@ -57,8 +56,5 @@ int	init_display(t_display *display)
 			&display->endian);
 	if (!display->addr)
 		return (1);
-	//display->bpp = 0;
-	//display->line_len = 0;
-	//display->endian = 0;
 	return (0);
 }
