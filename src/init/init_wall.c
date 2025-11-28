@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dummy.h                                            :+:      :+:    :+:   */
+/*   init_wall.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albetanc <albetanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 18:29:29 by albetanc          #+#    #+#             */
-/*   Updated: 2025/11/28 15:19:38 by albetanc         ###   ########.fr       */
+/*   Created: 2025/11/28 14:54:09 by albetanc          #+#    #+#             */
+/*   Updated: 2025/11/28 14:55:10 by albetanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DUMMY_H
-# define DUMMY_H
+#include "cub.h"
 
-void	load_dummy_text(t_game *game);
-void	fill_dummy(t_game *game);
+void	init_wall_data(t_wall_data *wdata)
+{
+	wdata->img_ptr = NULL;
+	wdata->addr = NULL;
+	wdata->bpp = 0;
+	wdata->line_len = 0;
+	wdata->endian = 0;
+	wdata->width = 0;
+	wdata->height = 0;
+}
 
-#endif
+void	init_render_tex(t_render_tex *rtex)
+{
+	init_wall_data(&rtex->north);
+	init_wall_data(&rtex->south);
+	init_wall_data(&rtex->west);
+	init_wall_data(&rtex->east);
+}
